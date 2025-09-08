@@ -1,0 +1,33 @@
+{
+      "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+      ],
+      "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
+      "plugins": [
+        "react",
+        "react-hooks"
+      ],
+      "rules": {
+        // Add or customize rules here, e.g.,
+        "react/prop-types": "off", // Disable prop-types if using TypeScript
+        "react/react-in-jsx-scope": "off" // Disable for React 17+ new JSX transform
+      },
+      "settings": {
+        "react": {
+          "version": "detect" // Automatically detect React version
+        }
+      }
+    }
