@@ -2,10 +2,6 @@ import React from 'react'
 import Toolbar from './Toolbar';
 import ProjectList from './ProjectList';
 import projects from '../source.json';
-import { useState } from 'react';
-
-//класс передает в Toolbar (filters, selected, onSelectFilter(filter)
-//класс хранит список проектов projects
 
 class Portfolio extends React.Component {
     constructor(props) {
@@ -16,18 +12,30 @@ class Portfolio extends React.Component {
            selected: this.selected
         };
     }
+    filterProjects = (filter) => {
+        let filteredProjects;
+        if(this.state.selected == "All") {
+            return projects;
+        } else
+        {
+            filteredProjects = projects.filter(project => project.category == filter)
+        }
+        return filteredProjects;
+    }
 
     clickFilter = (filter) => {
         console.log(`Clicked ${filter}`)
         this.setState({  selected: filter });
+        this.filterProjects(filter);
         console.log(this.state.selected)
     }
     render() {
         return (
         <>
         <Toolbar filters={this.filters} selected={this.state.selected} onSelectFilter={this.clickFilter} />
-        <ProjectList projects={projects}/>
-        <div>Portfolio component</div></>
+        <ProjectList projects={this.filterProjects(this.state.selected)}/>
+        {/* <div>Portfolio component</div> */}
+        </>
         )
     }
 }
