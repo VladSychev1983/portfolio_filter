@@ -7,7 +7,8 @@ function App() {
     //vсобираем все компоненты тут.
     <>
       <Portfolio />
-      <div>other components</div></>
+      {/* <div>other components</div> */}
+      </>
   )
 }
 
