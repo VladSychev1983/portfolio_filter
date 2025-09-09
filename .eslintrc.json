@@ -23,7 +23,8 @@
       "rules": {
         // Add or customize rules here, e.g.,
         "react/prop-types": "off", // Disable prop-types if using TypeScript
-        "react/react-in-jsx-scope": "off" // Disable for React 17+ new JSX transform
+        "react/react-in-jsx-scope": "off", // Disable for React 17+ new JSX transform
+        "no-unused-vars": "off"
       },
       "settings": {
         "react": {

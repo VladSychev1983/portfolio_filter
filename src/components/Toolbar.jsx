@@ -1,6 +1,11 @@
 export default function Toolbar({filters, selected, onSelectFilter}) {
     return (
-        //filter buttons here.
-        <div className="className"><p>filter buttons</p></div>
+        //отображаем кнопки
+        <div className="buttons">
+        <button className="active">All</button>
+        <button>Websites</button>
+        <button>Flayers</button>
+        <button>Business Cards</button>  
+        </div>
     );
 }
