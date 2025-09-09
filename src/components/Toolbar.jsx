@@ -1,11 +1,17 @@
+import React, { useState } from 'react';
 export default function Toolbar({filters, selected, onSelectFilter}) {
+    console.log(`Toolbar selected: ${selected}`)
     return (
         //отображаем кнопки
         <div className="buttons">
-        <button className="active">All</button>
-        <button>Websites</button>
-        <button>Flayers</button>
-        <button>Business Cards</button>  
+            {filters.map((filter) => (
+        <button 
+        key={filter} 
+        className={selected == filter ? 'active':''}
+        onClick={() => onSelectFilter(filter)}
+        >{filter}</button>
+            ))
+            }
         </div>
     );
 }

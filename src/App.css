@@ -5,7 +5,7 @@ body {
 }
 .portfolio {
   max-width: 1170px;
-  margin: 30px auto;
+  margin: 15px auto;
   padding: 0 15px;
   column-count: 3;
 }
